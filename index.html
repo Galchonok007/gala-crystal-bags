@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GALA CRYSTAL BAGS - сумки, обвесы и чокеры из бусин</title>
+<meta name="description" content="Авторские сумки, обвесы, чокеры из бусин и хрусталя ручной работы. Москва, отправка СДЭК.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050c1c;
+  --bg2: #0a1830;
+  --card: #0f213f;
+  --line: #1d3558;
+  --text: #e8f1ff;
+  --muted: #8fa7c9;
+  --neon: #3fd6ff;
+  --neon2: #5b8cff;
+  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --logo: "Cinzel", Georgia, serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+.wrap { width: min(1220px, calc(100% - 32px)); margin: 0 auto; }
+.eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); }
+h1, h2, h3 { font-weight: 500; letter-spacing: -0.035em; line-height: 1.05; }
+h1 { font-size: clamp(2.6rem, 5vw, 4.2rem); }
+h2 { font-size: clamp(2rem, 3.8vw, 3.1rem); }
+h3 { font-size: 1.3rem; letter-spacing: -0.02em; }
+p { color: var(--muted); }
+
+/* ---- neon button with a running spark around the border ---- */
+.neon {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.95rem 1.8rem; border-radius: 999px; font-weight: 600; font-size: 0.95rem;
+  color: var(--text); text-decoration: none; background: #06142c;
+  box-shadow: 0 0 16px rgba(63,214,255,0.30), inset 0 0 12px rgba(63,214,255,0.12);
+  transition: box-shadow .25s, transform .2s;
+}
+.neon::before {
+  content: ""; position: absolute; inset: -60%; z-index: -2;
+  background: conic-gradient(from 0deg, transparent 0deg, transparent 290deg, var(--neon) 330deg, #ffffff 350deg, transparent 360deg);
+  animation: spin 2.8s linear infinite;
+}
+.neon::after { content: ""; position: absolute; inset: 2px; border-radius: 999px; background: #06142c; z-index: -1; }
+.neon:hover { transform: translateY(-2px); box-shadow: 0 0 26px rgba(63,214,255,0.55), inset 0 0 16px rgba(63,214,255,0.22); }
+.neon.alt::before { background: conic-gradient(from 0deg, transparent 0deg, transparent 290deg, var(--neon2) 330deg, #ffffff 350deg, transparent 360deg); }
+.neon.solid { background: var(--neon2); color: #04101f; font-weight: 700; }
+.neon.solid::after { background: var(--neon2); }
+.neon.solid::before { background: conic-gradient(from 0deg, transparent 0deg, transparent 290deg, #ffffff 340deg, #ffffff 360deg, transparent 360deg); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.trust { background: #030815; color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em; text-align: center; padding: 0.55rem 1rem; border-bottom: 1px solid var(--line); }
+.trust span { margin: 0 0.8rem; }
+
+header.nav { position: sticky; top: 0; z-index: 30; background: rgba(5,12,28,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 1rem; }
+.logo { font-family: var(--logo); font-size: 1.05rem; letter-spacing: 0.28em; text-decoration: none; color: var(--text); }
+.logo small { display: block; font-size: 0.56rem; letter-spacing: 0.34em; color: var(--muted); }
+.nav-links { display: flex; gap: 1.6rem; list-style: none; font-size: 0.9rem; }
+.nav-links a { text-decoration: none; color: var(--muted); }
+.nav-links a:hover { color: var(--text); }
+.social { display: flex; gap: 0.6rem; }
+.social .neon { padding: 0.5rem 1rem; font-size: 0.82rem; font-weight: 500; }
+
+/* ---- hero ---- */
+.hero { padding: 4.5rem 0 4rem; background: radial-gradient(ellipse at 80% 20%, #0c2550 0%, var(--bg) 60%); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 460px); gap: 3.5rem; align-items: center; }
+.hero h1 em { font-style: normal; color: var(--neon); }
+.hero-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 2rem; }
+.hero .lead { margin-top: 1.4rem; font-size: 1.08rem; max-width: 46ch; }
+
+/* ---- morph gallery (one component, several instances) ---- */
+.gal { position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; background: #000; border-radius: 22px; border: 1px solid var(--line); outline: none; touch-action: pan-y; }
+.gal:focus-visible { box-shadow: 0 0 0 2px var(--neon); }
+.gal canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity .5s ease; }
+.gal canvas.ready { opacity: 1; }
+.gal-fallback { position: absolute; inset: 0; }
+.gal-fallback img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .9s ease; }
+.gal-fallback img.on { opacity: 1; }
+.gal-shade { position: absolute; left: 0; right: 0; bottom: 0; height: 32%; background: linear-gradient(to top, rgba(0,0,0,0.65), transparent); pointer-events: none; }
+.gal-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(63,214,255,0.5); background: rgba(5,12,28,0.55); color: var(--neon); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background .2s, box-shadow .2s; }
+.gal-arrow:hover { background: rgba(63,214,255,0.2); box-shadow: 0 0 14px rgba(63,214,255,0.5); }
+.gal-arrow.prev { left: 0.9rem; }
+.gal-arrow.next { right: 0.9rem; }
+.gal-meta { position: absolute; left: 1.2rem; right: 1.2rem; bottom: 1.1rem; z-index: 5; display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; color: var(--text); }
+.gal-title { font-size: 1.05rem; font-weight: 500; }
+.gal-count { font-size: 0.82rem; letter-spacing: 0.12em; color: var(--neon); white-space: nowrap; }
+.gal-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(255,255,255,0.12); z-index: 6; }
+.gal-bar i { display: block; height: 100%; width: 0; background: var(--neon); box-shadow: 0 0 8px var(--neon); }
+
+.marquee { background: #071634; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; white-space: nowrap; padding: 1rem 0; }
+.marquee-track { display: inline-block; animation: slide 30s linear infinite; font-size: 1.1rem; color: var(--muted); letter-spacing: 0.04em; }
+.marquee-track span { margin: 0 1.4rem; }
+.marquee-track span.neon-dot { color: var(--neon); }
+@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+section { padding: 5.5rem 0; }
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.4rem; }
+.head p { max-width: 46ch; }
+
+/* ---- filter chips ---- */
+.chips { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 2rem; }
+.chip { font: inherit; font-size: 0.88rem; padding: 0.5rem 1.05rem; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; transition: all .2s; }
+.chip:hover { color: var(--text); border-color: var(--neon); }
+.chip[aria-pressed="true"] { color: #04101f; background: var(--neon); border-color: var(--neon); box-shadow: 0 0 14px rgba(63,214,255,0.45); }
+
+/* ---- product grid ---- */
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.item { position: relative; border-radius: 18px; overflow: hidden; background: var(--card); border: 1px solid var(--line); aspect-ratio: 4 / 5; transition: border-color .25s, transform .25s; }
+.item:hover { border-color: var(--neon); transform: translateY(-3px); }
+.item img { width: 100%; height: 100%; object-fit: cover; }
+.item span { position: absolute; left: 0.8rem; bottom: 0.7rem; font-size: 0.8rem; background: rgba(5,12,28,0.7); color: var(--text); padding: 0.25rem 0.7rem; border-radius: 999px; }
+.item[hidden] { display: none; }
+
+.split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 3.5rem; align-items: start; }
+.split .gal { aspect-ratio: 4 / 5; max-width: 520px; }
+
+.chokers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.chokers .item { aspect-ratio: 4 / 5; }
+
+.videos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+.vid { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+.vid video { width: 100%; height: auto; max-height: 560px; background: #000; }
+.vid div { padding: 0.9rem 1.1rem; font-size: 0.9rem; color: var(--muted); }
+
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.about .panel { border: 1px solid var(--line); border-radius: 24px; padding: 2.4rem; background: var(--bg2); }
+.about li { list-style: none; padding: 0.6rem 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+.about ul { margin-top: 1rem; }
+
+.faq { display: grid; gap: 0.7rem; max-width: 860px; }
+details { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.1rem 1.4rem; }
+summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+summary::after { content: "+"; color: var(--neon); font-size: 1.4rem; }
+details[open] summary::after { content: "-"; }
+details p { margin-top: 0.7rem; font-size: 0.95rem; }
+
+.final { text-align: center; padding: 7rem 0; background: radial-gradient(ellipse at 50% 0%, #0c2550 0%, var(--bg) 65%); }
+.final h2 { max-width: 16ch; margin: 0 auto; }
+.final p { margin: 1.2rem auto 2.2rem; max-width: 46ch; }
+.final .hero-cta { justify-content: center; }
+.contacts { margin-top: 2.4rem; display: flex; justify-content: center; gap: 1.4rem; flex-wrap: wrap; color: var(--muted); font-size: 0.95rem; }
+footer { border-top: 1px solid var(--line); padding: 2rem 0; font-size: 0.85rem; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .9s ease, transform .9s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+[hidden] { display: none !important; }
+#bagMorphs { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.6rem; }
+#bagMorphs.single { grid-template-columns: minmax(300px, 520px); }
+.morph-block h3 { font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--text); }
+.acc { border: 1px solid var(--line); border-radius: 18px; background: var(--card); margin-bottom: 0.9rem; overflow: hidden; }
+.acc > summary { display: flex; align-items: center; gap: 1rem; padding: 0.7rem 1rem; cursor: pointer; list-style: none; }
+.acc > summary img { width: 64px; height: 80px; object-fit: cover; border-radius: 10px; flex: none; }
+.acc > summary .acc-label { font-size: 1.1rem; font-weight: 500; }
+.acc > summary .acc-count { font-size: 0.82rem; color: var(--muted); }
+.acc > summary::after { margin-left: auto; }
+.acc .grid { padding: 0 1rem 1rem; }
+@media (max-width: 1000px) {
+  .nav-links { display: none; }
+  .grid { grid-template-columns: repeat(3, 1fr); }
+  .hero-grid, .split, .about { grid-template-columns: 1fr; }
+  .split .gal { max-width: 100%; }
+}
+@media (max-width: 680px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .chokers, .videos { grid-template-columns: 1fr; }
+  section { padding: 4rem 0; }
+  .social .neon { padding: 0.4rem 0.7rem; font-size: 0.75rem; }
+  .hero { padding-top: 3rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .neon::before { animation: none; }
+  .reveal { transition: none; }
+}
+/* ---- videos: each card takes the width of its clip, three in a row ---- */
+.videos { grid-template-columns: repeat(3, max-content); justify-content: center; }
+.vid { width: max-content; max-width: 100%; justify-self: center; }
+.vid video { width: auto; height: 520px; max-width: 100%; margin: 0 auto; }
+.vid div { max-width: 100%; }
+@media (max-width: 1000px) {
+  .videos { grid-template-columns: repeat(2, max-content); }
+}
+@media (max-width: 680px) {
+  .videos { grid-template-columns: 1fr; }
+  .vid { width: 100%; }
+  .vid video { width: 100%; height: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="trust"><span>Ручная работа</span><span>·</span><span>Отправка СДЭК из Москвы</span><span>·</span><span>Индивидуальный заказ</span></div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">GALA<small>CRYSTAL BAGS</small></a>
+    <ul class="nav-links">
+      <li><a href="#bags">Сумки</a></li>
+      <li><a href="#accessories">Обвесы</a></li>
+      <li><a href="#chokers">Чокеры</a></li>
+      <li><a href="#videos">Видео</a></li>
+      <li><a href="#order">Заказ</a></li>
+    </ul>
+    <div class="social">
+      <a class="neon" href="https://t.me/My_crystal_bags" target="_blank" rel="noopener">Telegram</a>
+      <a class="neon alt" href="https://www.instagram.com/galinamatrosova_" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Авторские сумки из бусин</p>
+        <h1 style="margin-top:1rem">Украшение, <em>которое</em> носят как сумку</h1>
+        <p class="lead">Каждая вещь плетётся вручную, бусина к бусине. Хрусталь ловит свет, сумка держит форму и вмещает телефон, ключи и помаду.</p>
+        <div class="hero-cta">
+          <a class="neon" href="#bags">Выбрать сумку</a>
+          <a class="neon alt" href="https://t.me/My_crystal_bags" target="_blank" rel="noopener">Написать в Telegram</a>
+        </div>
+      </div>
+      <div class="gal" data-morph="hero" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Девушки с сумками">
+        <canvas aria-hidden="true"></canvas>
+        <div class="gal-fallback" hidden></div>
+        <div class="gal-shade" aria-hidden="true"></div>
+        <button type="button" class="gal-arrow prev" aria-label="Предыдущее фото"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button type="button" class="gal-arrow next" aria-label="Следующее фото"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="gal-meta"><span class="gal-title"></span><span class="gal-count"></span></div>
+        <div class="gal-bar" aria-hidden="true"><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Сумки из бусин</span><span class="neon-dot">✦</span><span>Обвесы</span><span class="neon-dot">✦</span><span>Чокеры</span><span class="neon-dot">✦</span><span>Для телефона</span><span class="neon-dot">✦</span><span>Сумки из бусин</span><span class="neon-dot">✦</span><span>Обвесы</span><span class="neon-dot">✦</span><span>Чокеры</span><span class="neon-dot">✦</span><span>Для телефона</span><span class="neon-dot">✦</span>
+    </div>
+  </div>
+
+  <section id="bags">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <p class="eyebrow">01</p>
+          <h2 style="margin-top:.6rem">Сумки</h2>
+        </div>
+        <p>Выберите цвет. Цены и наличие уточняйте в Telegram: коллекции меняются.</p>
+      </div>
+      <div class="chips" role="group" aria-label="Фильтр по цвету">
+        <button class="chip" aria-pressed="true" data-filter="all">Все</button>
+        <button class="chip" aria-pressed="false" data-filter="white">Белые</button>
+        <button class="chip" aria-pressed="false" data-filter="black">Чёрные</button>
+        <button class="chip" aria-pressed="false" data-filter="blue">Синие</button>
+        <button class="chip" aria-pressed="false" data-filter="red">Красные</button>
+        <button class="chip" aria-pressed="false" data-filter="pink">Розовые</button>
+        <button class="chip" aria-pressed="false" data-filter="silver">Серебро</button>
+        <button class="chip" aria-pressed="false" data-filter="phone">Для телефона</button>
+        <button class="chip" aria-pressed="false" data-filter="wood">Дерево</button>
+      </div>
+      <div id="bagMorphs" class="reveal"></div>
+      <div class="grid reveal" id="bagGrid">
+        <figure class="item" data-color="white"><img loading="lazy" src="assets/photo-01.jpg" alt="Белая сумка из жемчуга"><span>Белая</span></figure>
+        <figure class="item" data-color="white"><img loading="lazy" src="assets/photo-02.jpg" alt="Жемчужная сумка"><span>Жемчужная</span></figure>
+        <figure class="item" data-color="white"><img loading="lazy" src="../ФОТО для сайта/сумки мз бусин 7 (9).png" alt="Белая сумка на песке"><span>Белая</span></figure>
+        <figure class="item" data-color="white"><img loading="lazy" src="assets/photo-03.jpg" alt="Элегантная сумка из жемчуга"><span>Жемчуг</span></figure>
+        <figure class="item" data-color="black"><img loading="lazy" src="../ФОТО для сайта/Сумка черная с золотом (7).jpg" alt="Чёрная сумка с золотом"><span>Чёрная с золотом</span></figure>
+        <figure class="item" data-color="black"><img loading="lazy" src="../ФОТО для сайта/Сумка черная с золотом (8).jpg" alt="Чёрная сумка с золотом"><span>Чёрная с золотом</span></figure>
+        <figure class="item" data-color="black"><img loading="lazy" src="../ФОТО для сайта/Черная с серебром (3).jpg" alt="Чёрная сумка с серебром"><span>Чёрная с серебром</span></figure>
+        <figure class="item" data-color="black"><img loading="lazy" src="../ФОТО для сайта/Сумка черная с серебром (5).jpg" alt="Чёрная сумка с серебром"><span>Чёрная с серебром</span></figure>
+        <figure class="item" data-color="black"><img loading="lazy" src="../ФОТО для сайта/Сумка черная с серебром (6).jpg" alt="Чёрная сумка с серебром"><span>Чёрная с серебром</span></figure>
+        <figure class="item" data-color="blue"><img loading="lazy" src="assets/photo-04.jpg" alt="Синяя сумка из квадратных бусин"><span>Синяя</span></figure>
+        <figure class="item" data-color="blue"><img loading="lazy" src="../ФОТО для сайта/сумки мз бусин 7 (8).png" alt="Синяя сумка на пляже"><span>Синяя</span></figure>
+        <figure class="item" data-color="red"><img loading="lazy" src="../ФОТО для сайта/сумки мз бусин 7 (7).png" alt="Красная сумка из бусин"><span>Красная</span></figure>
+        <figure class="item" data-color="red"><img loading="lazy" src="../ФОТО для сайта/сумки мз бусин 7 (14).png" alt="Красная сумка с котом"><span>Красная</span></figure>
+        <figure class="item" data-color="pink"><img loading="lazy" src="assets/photo-05.jpg" alt="Розовая сумка с жемчужной ручкой"><span>Розовая</span></figure>
+        <figure class="item" data-color="pink"><img loading="lazy" src="assets/photo-06.jpg" alt="Розовая сумка с изумрудными бусинами"><span>Розовая с изумрудом</span></figure>
+        <figure class="item" data-color="pink"><img loading="lazy" src="assets/photo-07.jpg" alt="Розовая сумка"><span>Розовая</span></figure>
+        <figure class="item" data-color="pink"><img loading="lazy" src="assets/photo-08.jpg" alt="Розово-зелёная сумка"><span>Розово-зелёная</span></figure>
+        <figure class="item" data-color="pink"><img loading="lazy" src="../ФОТО для сайта/сумки мз бусин 7 (3).png" alt="Розовая сумка из бусин"><span>Розовая</span></figure>
+        <figure class="item" data-color="silver"><img loading="lazy" src="../ФОТО для сайта/сумки мз бусин 7 (10).png" alt="Серебряная сумка на песке"><span>Серебро</span></figure>
+        <figure class="item" data-color="silver"><img loading="lazy" src="../ФОТО для сайта/Сумка черная с серебром (4).jpg" alt="Чёрная сумка с серебром"><span>Серебро</span></figure>
+        <figure class="item" data-color="silver"><img loading="lazy" src="../ФОТО для сайта/Сумка черная с серебром (5).jpg" alt="Чёрная сумка с серебром"><span>Серебро</span></figure>
+        <figure class="item" data-color="silver"><img loading="lazy" src="../ФОТО для сайта/Сумка черная с серебром (6).jpg" alt="Чёрная сумка с серебром"><span>Серебро</span></figure>
+        <figure class="item" data-color="phone"><img loading="lazy" src="assets/photo-09.jpg" alt="Маленькая белая сумка для телефона"><span>Для телефона</span></figure>
+        <figure class="item" data-color="phone"><img loading="lazy" src="assets/photo-10.jpg" alt="Белая сумка для телефона на пляже"><span>Для телефона</span></figure>
+        <figure class="item" data-color="phone"><img loading="lazy" src="assets/photo-11.jpg" alt="Белая сумка для телефона с аксессуарами"><span>Для телефона</span></figure>
+        <figure class="item" data-color="phone"><img loading="lazy" src="assets/photo-12.jpg" alt="Сумка для телефона из бусин"><span>Для телефона</span></figure>
+        <figure class="item" data-color="wood"><img loading="lazy" src="assets/photo-13.jpg" alt="Сумка из деревянных бусин венге"><span>Венге</span></figure>
+        <figure class="item" data-color="wood"><img loading="lazy" src="../ФОТО для сайта/сумка из бусин из натурального дерева (1).jpg" alt="Сумка из натурального дерева"><span>Дерево</span></figure>
+        <figure class="item" data-color="wood"><img loading="lazy" src="../ФОТО для сайта/сумка из бусин из натурального дерева (2).jpg" alt="Сумка из натурального дерева"><span>Дерево</span></figure>
+        <figure class="item" data-color="wood"><img loading="lazy" src="../ФОТО для сайта/сумки мз бусин 7 (12).png" alt="Сумка из деревянных бусин"><span>Дерево</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="accessories" style="padding-top:0">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">02</p>
+        <h2 style="margin-top:.6rem">Обвесы</h2>
+        <p style="margin-top:1rem">Обвес можно повесить на сумку, надеть как цепочку на пояс или приколоть на пиджак. Листайте галерею: слева, справа или свайпом.</p>
+        <div class="hero-cta"><a class="neon solid" href="https://t.me/My_crystal_bags" target="_blank" rel="noopener">Заказать обвес</a></div>
+      </div>
+      <div class="gal reveal" data-morph="obves" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Обвесы">
+        <canvas aria-hidden="true"></canvas>
+        <div class="gal-fallback" hidden></div>
+        <div class="gal-shade" aria-hidden="true"></div>
+        <button type="button" class="gal-arrow prev" aria-label="Предыдущее фото"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button type="button" class="gal-arrow next" aria-label="Следующее фото"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <div class="gal-meta"><span class="gal-title"></span><span class="gal-count"></span></div>
+        <div class="gal-bar" aria-hidden="true"><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="chokers" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <p class="eyebrow">03</p>
+          <h2 style="margin-top:.6rem">Чокеры</h2>
+        </div>
+        <p>Из бусин и натуральных камней. Александрит меняет цвет при смене освещения: при дневном свете зеленоватый, при искусственном фиолетово-сиреневый.</p>
+      </div>
+      <div class="chokers reveal">
+        <figure class="item"><img loading="lazy" src="../ФОТО для сайта/Чокер из натурального александрита (1).png" alt="Чокер из натурального александрита на шее модели"><span>Александрит</span></figure>
+        <figure class="item"><img loading="lazy" src="../ФОТО для сайта/Чокер из натурального александрита (2).png" alt="Чокер из натурального александрита"><span>Александрит</span></figure>
+        <figure class="item"><img loading="lazy" src="assets/photo-14.jpg" alt="Чокер из разноцветных бусин с подвесками"><span>Разноцветный</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <p class="eyebrow">Видео</p>
+          <h2 style="margin-top:.6rem">Как это выглядит в движении</h2>
+        </div>
+        <p>Хрусталь живёт на свету. Ролики из мастерской.</p>
+      </div>
+      <div class="videos">
+        <div class="vid reveal"><video controls preload="metadata" playsinline src="assets/photo-15.mp4"></video><div>Сумки из бусин, обзор</div></div>
+        <div class="vid reveal"><video controls preload="metadata" playsinline src="assets/photo-16.mp4"></video><div>Гранат</div></div>
+        <div class="vid reveal"><video controls preload="metadata" playsinline src="assets/photo-17.mp4"></video><div>Сумка из дерева, венге</div></div>
+        <div class="vid reveal"><video controls preload="metadata" playsinline src="assets/photo-18.mp4"></video><div>Шамбала</div></div>
+        <div class="vid reveal"><video controls preload="metadata" playsinline src="assets/photo-19.mp4"></video><div>Чокер</div></div>
+        <div class="vid reveal"><video controls preload="metadata" playsinline src="assets/photo-20.mp4"></video><div>Обвес чёрный</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="padding-top:0">
+    <div class="wrap about reveal">
+      <div>
+        <p class="eyebrow">О мастере</p>
+        <h2 style="margin-top:.6rem">Галина</h2>
+        <p style="margin-top:1rem">Я плету сумки и украшения из бусин и камней. Люблю, когда вещь звучит в образе: сумка-украшение, обвес, чокер.</p>
+        <div class="hero-cta"><a class="neon alt" href="https://www.instagram.com/galinamatrosova_" target="_blank" rel="noopener">Instagram</a></div>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">Что помещается</p>
+        <ul style="margin-top:1rem">
+          <li>Большой телефон в чехле</li>
+          <li>Паспорт, права, карты</li>
+          <li>Ключи, помада, зеркальце</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" style="padding-top:0">
+    <div class="wrap">
+      <div class="head reveal"><div><p class="eyebrow">Заказ</p><h2 style="margin-top:.6rem">Своя сумка</h2></div><p>Выберите цвет, бусины и форму. Срок изготовления около двух недель, отправка СДЭК из Москвы.</p></div>
+      <div class="faq reveal">
+        <details><summary>Как заказать?</summary><p>Напишите в Telegram @My_crystal_bags или в Instagram. Подберём модель и согласуем детали.</p></details>
+        <details><summary>Сколько делается сумка на заказ?</summary><p>Если сумка есть в наличии, отправляю её через СДЭК в день оформления заказа. Если под заказ, изготовление занимает примерно две недели, в зависимости от сложности плетения.</p></details>
+        <details><summary>Как доставляется?</summary><p>Отправляю СДЭК из Москвы сразу после оформления заказа.</p></details>
+        <details><summary>Как ухаживать за изделием?</summary><p>Храните сумку в чехле или пыльнике, подальше от воды, батарей и прямого солнца: стекло и бисер не любят света. Пятна промокните мягкой сухой салфеткой. Пыль смахивайте мягкой кистью. Не стирайте в машине, не сушите феном и не тяните за бусины.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap reveal">
+      <p class="eyebrow">Ваша вещь</p>
+      <h2 style="margin-top:.8rem">Выберите ту, которая будет вашей</h2>
+      <p>Напишите в Telegram или Instagram, покажу наличие и подберу цвет.</p>
+      <div class="hero-cta">
+        <a class="neon solid" href="https://t.me/My_crystal_bags" target="_blank" rel="noopener">Telegram</a>
+        <a class="neon alt" href="https://www.instagram.com/galinamatrosova_" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="contacts"><span>@My_crystal_bags</span><span>@galinamatrosova_</span><span>Москва, СДЭК</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>GALA CRYSTAL BAGS · Авторские сумки из бусин</span>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+<script>
+/* ---- morph galleries: WebGL dissolve between photos, DOM cross-fade as fallback ---- */
+var GALLERIES = {
+  hero: {
+    base: "../ФОТО для сайта/",
+    items: [
+      ["Белый жемчуг 6х14х22 -4.jpg", "Белая сумка из жемчуга"],
+      ["Винтаж сумка жемчуг 7х12,5х22,5 -3.jpg", "Винтажная сумка из жемчуга"],
+      ["Винтаж сумка жемчуг 7х12,5х22,5 -4.jpg", "Винтажная сумка из жемчуга"],
+      ["Жемчужная сумка 6х15х25,5 -3.jpg", "Жемчужная сумка"],
+      ["Жемчужная сумка 6х15х25,5 -7.jpg", "Жемчужная сумка"],
+      ["Жемчужная сумка_ элегантный мудборд.png", "Жемчужная сумка, мудборд"],
+      ["Розово-зелёная сумочка_ модный коллаж.png", "Розово-зелёная сумка"],
+      ["Синяя умка -квадратные бусины 7,5х13х18-2.png", "Синяя сумка"],
+      ["Сумка черная с серебром (1).jpg?v=3", "Чёрная сумка с серебром"],
+      ["Сумка черная с серебром (2).jpg?v=3", "Чёрная сумка с серебром"],
+      ["Сумка черная с серебром (3).jpg?v=3", "Чёрная сумка с серебром"],
+      ["сумки из бусин (2).png", "Сумка из бусин"],
+      ["сумки из бусин (3).png", "Сумка из бусин"],
+      ["сумки из бусин (4).png", "Сумка из бусин"],
+      ["сумки из бусин (5).png", "Сумка из бусин"],
+      ["сумки из бусин (6).png", "Сумка из бусин"],
+      ["сумки из бусин (7).png", "Сумка из бусин"],
+      ["сумки мз бусин 7 (1).png", "Сумка из бусин"],
+      ["сумки мз бусин 7 (15).png", "Сумка из бусин"],
+      ["сумки мз бусин 7 (16).png", "Сумка из бусин"],
+      ["сумки мз бусин 7 (4).png", "Сумка из бусин"],
+      ["Элегантный коллаж с бисерной сумкой.png", "Бисерная сумка, коллаж"]
+    ]
+  },
+  obves: {
+    base: "../ФОТО для сайта/Обвесы для сайта/",
+    items: [
+      ["GPT_Image_Professional_fashion_photograp_25420387.png", "Обвес на модели"],
+      ["GPT_Image_Studio_fashion_photography_for_25420113.png", "Обвес на модели"],
+      ["GPT_Image_Studio_fashion_photography_for_25420338.png", "Обвес на модели"],
+      ["GPT_Image_Возьми_за_референс_мое_фото._А_25419980.png", "Обвес на модели"],
+      ["Брошь с голубым шармом и цепочками.png", "Брошь с голубым шармом"],
+      ["Брошь с лазурным шармом и цепочками.png", "Брошь с лазурным шармом"],
+      ["Готическое ожерелье с шармами.png", "Ожерелье с шармами"],
+      ["Девушка с обвесом.png", "Обвес на девушке"],
+      ["Обвес с любимыми животными.png", "Обвес с животными"],
+      ["Серебряная брошь с подвесками.png", "Серебряная брошь с подвесками"],
+      ["Царство бисера на сумке.png", "Обвес на сумке"],
+      ["обвес с фото.png", "Обвес"]
+    ]
+  }
+};
+
+/* порядок кадров в морфе: 13-22, затем 6-12, затем 1-5 (нумерация с 1) */
+GALLERIES.hero.items = [18,12,13,14,15,16,17,21,5,6,7,8,9,10,11,0,4].map(function (i) { return GALLERIES.hero.items[i]; });
+
+var MORPH = {
+  duration: 1500, edge: 0.15, drift: 0.5, noiseScale: 3.5,
+  maxTex: 1280, keep: 2, autoplay: 5000
+};
+
+var VERT = "\nattribute vec2 a_position;\nvarying vec2 v_uv;\nvoid main() {\n  v_uv = a_position * 0.5 + 0.5;\n  gl_Position = vec4(a_position, 0.0, 1.0);\n}\n";
+
+var FRAG = "\nprecision highp float;\n\nuniform sampler2D u_from;\nuniform sampler2D u_to;\nuniform float u_progress;\nuniform vec2 u_resolution;\nuniform float u_fromAspect;\nuniform float u_toAspect;\nuniform float u_scale;\nuniform float u_direction;\nuniform float u_edge;\nuniform float u_drift;\n\nvarying vec2 v_uv;\n\nvec3 permute(vec3 x) {\n  return mod(((x * 34.0) + 1.0) * x, 289.0);\n}\n\nfloat snoise(vec2 v) {\n  const vec4 C = vec4(\n    0.211324865405187,\n    0.366025403784439,\n   -0.577350269189626,\n    0.024390243902439\n  );\n  vec2 i  = floor(v + dot(v, C.yy));\n  vec2 x0 = v - i + dot(i, C.xx);\n  vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);\n  vec4 x12 = x0.xyxy + C.xxzz;\n  x12.xy -= i1;\n  i = mod(i, 289.0);\n  vec3 p = permute(\n    permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0)\n  );\n  vec3 m = max(0.5 - vec3(dot(x0, x0), dot(x12.xy, x12.xy), dot(x12.zw, x12.zw)), 0.0);\n  m = m * m;\n  m = m * m;\n  vec3 x  = 2.0 * fract(p * C.www) - 1.0;\n  vec3 h  = abs(x) - 0.5;\n  vec3 ox = floor(x + 0.5);\n  vec3 a0 = x - ox;\n  m *= 1.79284291400159 - 0.85373472095314 * (a0 * a0 + h * h);\n  vec3 g;\n  g.x  = a0.x  * x0.x  + h.x  * x0.y;\n  g.yz = a0.yz * x12.xz + h.yz * x12.yw;\n  return 130.0 * dot(m, g);\n}\n\nfloat fbm(vec2 v) {\n  float value = 0.0;\n  float amplitude = 0.5;\n  for (int i = 0; i < 5; i++) {\n    value += amplitude * snoise(v);\n    v *= 2.0;\n    amplitude *= 0.5;\n  }\n  return value;\n}\n\nvec2 mirror(vec2 uv) {\n  return 1.0 - abs(1.0 - mod(uv, 2.0));\n}\n\nvec2 coverUV(vec2 uv, float imgAspect) {\n  float canvasAspect = u_resolution.x / u_resolution.y;\n  vec2 scale = (canvasAspect > imgAspect)\n    ? vec2(1.0, imgAspect / canvasAspect)\n    : vec2(canvasAspect / imgAspect, 1.0);\n  return mirror((uv - 0.5) * scale + 0.5);\n}\n\nvoid main() {\n  float adjusted = u_progress * (1.0 + 2.0 * u_edge) - u_edge;\n\n  float noise = fbm(v_uv * u_scale + vec2(0.0, u_progress * u_direction)) * 0.5 + 0.5;\n  noise = smoothstep(\n    0.0,\n    2.0,\n    length(texture2D(u_to, coverUV(v_uv, u_toAspect)).rgb) + noise\n  );\n\n  float mixFactor = 1.0 - smoothstep(adjusted - u_edge, adjusted + u_edge, noise);\n\n  vec2 fromUV = coverUV(\n    v_uv + vec2(0.0, noise * u_progress * u_drift * u_direction),\n    u_fromAspect\n  );\n  vec2 toUV = coverUV(\n    v_uv + vec2(0.0, noise * (1.0 - u_progress) * -0.5 * u_drift * u_direction),\n    u_toAspect\n  );\n\n  gl_FragColor = mix(texture2D(u_from, fromUV), texture2D(u_to, toUV), mixFactor);\n}\n";
+
+function makeMorph(root, cfg) {
+  var items = cfg.items, n = items.length, base = cfg.base;
+  var canvas = root.querySelector("canvas");
+  var fallbackBox = root.querySelector(".gal-fallback");
+  var titleEl = root.querySelector(".gal-title");
+  var countEl = root.querySelector(".gal-count");
+  var barEl = root.querySelector(".gal-bar i");
+  var prevBtn = root.querySelector(".gal-arrow.prev");
+  var nextBtn = root.querySelector(".gal-arrow.next");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function src(i) { return base + items[i][0]; }
+  function wrap(i) { return ((i % n) + n) % n; }
+
+  var gl = null, program = null, buffer = null, uniforms = {};
+  var textures = [], aspects = [], loading = [];
+  var failed = false;
+  var active = 0, from = 0, to = 0, progress = 1, startedAt = 0, direction = 1;
+  var transitionId = 0, paused = false, raf = 0;
+
+  function buildFallback() {
+    failed = true;
+    fallbackBox.hidden = false;
+    canvas.style.display = "none";
+    for (var i = 0; i < n; i++) {
+      var img = document.createElement("img");
+      img.alt = items[i][1];
+      fallbackBox.appendChild(img);
+    }
+    showFallback(active);
+  }
+  function showFallback(i) {
+    var imgs = fallbackBox.querySelectorAll("img");
+    [i, wrap(i + 1), wrap(i - 1)].forEach(function (k) {
+      if (!imgs[k].getAttribute("src")) imgs[k].src = src(k);
+    });
+    for (var k = 0; k < imgs.length; k++) imgs[k].classList.toggle("on", k === i);
+  }
+
+  function compile(type, code) {
+    var s = gl.createShader(type);
+    gl.shaderSource(s, code);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s));
+    return s;
+  }
+  function setup() {
+    gl = canvas.getContext("webgl", { alpha: false, antialias: false });
+    if (!gl) throw new Error("no webgl");
+    program = gl.createProgram();
+    gl.attachShader(program, compile(gl.VERTEX_SHADER, VERT));
+    gl.attachShader(program, compile(gl.FRAGMENT_SHADER, FRAG));
+    gl.linkProgram(program);
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) throw new Error("link failed");
+    gl.useProgram(program);
+    buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(program, "a_position");
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    ["from", "to", "progress", "resolution", "fromAspect", "toAspect", "scale", "direction", "edge", "drift"]
+      .forEach(function (name) { uniforms[name] = gl.getUniformLocation(program, "u_" + name); });
+    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+    resize();
+  }
+  function resize() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = Math.round(canvas.clientWidth * dpr), h = Math.round(canvas.clientHeight * dpr);
+    if (!w || !h) return;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w; canvas.height = h;
+      if (gl) gl.viewport(0, 0, w, h);
+    }
+  }
+
+  /* Loads one photo, shrinks it to maxTex, uploads it. Resolves to true if ready. */
+  function loadTex(i) {
+    if (textures[i]) return Promise.resolve(true);
+    if (loading[i]) return loading[i];
+    loading[i] = new Promise(function (resolve) {
+      var img = new Image();
+      img.onload = function () {
+        try {
+          var s = Math.min(1, MORPH.maxTex / Math.max(img.naturalWidth, img.naturalHeight));
+          var c = document.createElement("canvas");
+          c.width = Math.max(1, Math.round(img.naturalWidth * s));
+          c.height = Math.max(1, Math.round(img.naturalHeight * s));
+          c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+          var tex = gl.createTexture();
+          gl.bindTexture(gl.TEXTURE_2D, tex);
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, c);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+          textures[i] = tex;
+          aspects[i] = img.naturalWidth / img.naturalHeight;
+          resolve(true);
+        } catch (e) {
+          /* a canvas read from file:// is tainted and cannot be uploaded: use the fallback */
+          buildFallbackLater();
+          resolve(false);
+        }
+      };
+      img.onerror = function () { resolve(false); };
+      img.src = src(i);
+    });
+    return loading[i];
+  }
+  function buildFallbackLater() { if (!failed) setTimeout(buildFallback, 0); }
+
+  function trim() {
+    for (var i = 0; i < n; i++) {
+      var d = Math.min(Math.abs(i - active), n - Math.abs(i - active));
+      if (d > MORPH.keep && textures[i]) {
+        gl.deleteTexture(textures[i]);
+        textures[i] = null;
+        loading[i] = null;
+      }
+    }
+  }
+
+  function easeInOutQuint(t) {
+    var x = Math.min(Math.max(t, 0), 1);
+    return x < 0.5 ? 16 * Math.pow(x, 5) : 1 - Math.pow(-2 * x + 2, 5) / 2;
+  }
+
+  function draw() {
+    if (failed || !gl) return;
+    resize();
+    if (progress < 1) {
+      var span = reduce ? 0 : MORPH.duration;
+      var elapsed = performance.now() - startedAt;
+      progress = span === 0 ? 1 : easeInOutQuint(Math.min(elapsed / span, 1));
+    }
+    if (!textures[from] || !textures[to]) return;
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, textures[from]);
+    gl.uniform1i(uniforms.from, 0);
+    gl.activeTexture(gl.TEXTURE1);
+    gl.bindTexture(gl.TEXTURE_2D, textures[to]);
+    gl.uniform1i(uniforms.to, 1);
+    gl.uniform1f(uniforms.progress, progress);
+    gl.uniform2f(uniforms.resolution, canvas.width, canvas.height);
+    gl.uniform1f(uniforms.fromAspect, aspects[from] || 1);
+    gl.uniform1f(uniforms.toAspect, aspects[to] || 1);
+    gl.uniform1f(uniforms.scale, MORPH.noiseScale);
+    gl.uniform1f(uniforms.direction, direction);
+    gl.uniform1f(uniforms.edge, MORPH.edge);
+    gl.uniform1f(uniforms.drift, MORPH.drift);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  }
+  function frame() {
+    draw();
+    raf = progress < 1 ? requestAnimationFrame(frame) : 0;
+  }
+  function kick() { if (!raf) raf = requestAnimationFrame(frame); }
+
+  function updateChrome() {
+    titleEl.textContent = items[active][1];
+    countEl.textContent = String(active + 1).padStart(2, "0") + " / " + String(n).padStart(2, "0");
+    barEl.style.width = ((active + 1) / n * 100) + "%";
+  }
+
+  function go(i) {
+    var target = wrap(i);
+    if (target === active) return;
+    var prev = active;
+    active = target;
+    updateChrome();
+    if (failed) { showFallback(active); return; }
+    var id = ++transitionId;
+    Promise.all([loadTex(prev), loadTex(target)]).then(function (ok) {
+      if (failed || !ok[0] || !ok[1]) return;
+      if (id !== transitionId) return;
+      trim();
+      loadTex(wrap(target + 1)); loadTex(wrap(target - 1));
+      from = prev;
+      to = target;
+      direction = (n > 2 && ((to - from + n) % n) * 2 <= n) || (n <= 2 && to > from) ? 1 : -1;
+      progress = reduce ? 1 : 0;
+      startedAt = performance.now();
+      if (reduce) from = to;
+      kick();
+    });
+  }
+
+  prevBtn.addEventListener("click", function () { go(active - 1); });
+  nextBtn.addEventListener("click", function () { go(active + 1); });
+  root.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(active - 1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); go(active + 1); }
+  });
+  var swipeX = null;
+  root.addEventListener("pointerdown", function (e) { swipeX = e.clientX; });
+  root.addEventListener("pointerup", function (e) {
+    if (swipeX === null) return;
+    var dx = e.clientX - swipeX;
+    swipeX = null;
+    if (Math.abs(dx) > 48) go(active + (dx < 0 ? 1 : -1));
+  });
+  root.addEventListener("mouseenter", function () { paused = true; });
+  root.addEventListener("mouseleave", function () { paused = false; });
+  document.addEventListener("visibilitychange", function () { paused = document.hidden; });
+  if (!reduce) setInterval(function () { if (!paused && !document.hidden) go(active + 1); }, MORPH.autoplay);
+
+  updateChrome();
+  try {
+    setup();
+    window.addEventListener("resize", resize);
+    loadTex(0).then(function (ok) {
+      if (!ok || failed) return;
+      from = to = 0;
+      progress = 1;
+      canvas.classList.add("ready");
+      kick();
+    });
+  } catch (e) {
+    buildFallback();
+  }
+}
+
+document.querySelectorAll("[data-morph]").forEach(function (el) {
+  var cfg = GALLERIES[el.getAttribute("data-morph")];
+  if (cfg) makeMorph(el, cfg);
+});
+
+/* ---- bags: one morph gallery per colour; chips show one colour, "Все" shows all ---- */
+(function () {
+  var chips = document.querySelectorAll(".chip");
+  var items = document.querySelectorAll("#bagGrid .item");
+  var grid = document.getElementById("bagGrid");
+  var box = document.getElementById("bagMorphs");
+  var LABELS = { white: "Белые", black: "Чёрные", blue: "Синие", red: "Красные", pink: "Розовые", silver: "Серебро", phone: "Для телефона", wood: "Дерево" };
+  var blocks = [];
+  grid.hidden = true; /* the grid stays in the page only as the photo list */
+
+  Object.keys(LABELS).forEach(function (color) {
+    var group = Array.prototype.filter.call(items, function (it) { return it.getAttribute("data-color") === color; });
+    if (!group.length) return;
+    var block = document.createElement("div");
+    block.className = "morph-block";
+    block.setAttribute("data-color", color);
+    var h = document.createElement("h3");
+    h.textContent = LABELS[color] + " · " + group.length + " фото";
+    var gal = document.createElement("div");
+    gal.className = "gal";
+    gal.setAttribute("tabindex", "0");
+    gal.setAttribute("role", "region");
+    gal.setAttribute("aria-roledescription", "carousel");
+    gal.setAttribute("aria-label", LABELS[color]);
+    gal.innerHTML = '<canvas aria-hidden="true"></canvas><div class="gal-fallback" hidden></div><div class="gal-shade" aria-hidden="true"></div>' +
+      '<button type="button" class="gal-arrow prev" aria-label="Предыдущее фото">&#8249;</button>' +
+      '<button type="button" class="gal-arrow next" aria-label="Следующее фото">&#8250;</button>' +
+      '<div class="gal-meta"><span class="gal-title"></span><span class="gal-count"></span></div><div class="gal-bar" aria-hidden="true"><i></i></div>';
+    block.appendChild(h);
+    block.appendChild(gal);
+    box.appendChild(block);
+    var list = group.map(function (it) {
+      var img = it.querySelector("img");
+      return [img.getAttribute("src"), img.getAttribute("alt")];
+    });
+    makeMorph(gal, { base: "", items: list });
+    blocks.push(block);
+  });
+
+  function show(f) {
+    var one = f !== "all";
+    box.classList.toggle("single", one);
+    blocks.forEach(function (b) { b.hidden = one && b.getAttribute("data-color") !== f; });
+  }
+
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chips.forEach(function (c) { c.setAttribute("aria-pressed", c === chip ? "true" : "false"); });
+      show(chip.getAttribute("data-filter"));
+    });
+  });
+  show("all");
+})();
+
+/* ---- reveal on scroll ---- */
+(function () {
+  var els = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) { els.forEach(function (el) { el.classList.add("in"); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
